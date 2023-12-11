@@ -1,0 +1,20 @@
+dependencies: \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/Runner/GeneratedPluginRegistrant.m \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/Runner/GeneratedPluginRegistrant.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Modules/module.modulemap \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/Flutter.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterAppDelegate.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterMacros.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterPlugin.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterBinaryMessenger.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterChannels.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterCodecs.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterPlatformViews.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterTexture.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterCallbackCache.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterDartProject.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterEngine.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterEngineGroup.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterHeadlessDartRunner.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterPluginAppLifeCycleDelegate.h \
+  /Users/uebetsunawayuuya/Desktop/Develop/Application/Flutter/indian_poker/ios/build/Debug-iphonesimulator/Flutter.framework/Headers/FlutterViewController.h
