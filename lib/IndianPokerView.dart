@@ -26,8 +26,13 @@ class _IndianPokerView extends State<IndianPokerView> {
       case ButtonType.drow:
         return MaterialButton(
           onPressed: _drow,
-          child: Text("Drow", style: TextStyle(fontSize: size.width * 0.07)),
-          padding: EdgeInsets.all(size.width * 0.085),
+          child: Text("Drow",
+              style: TextStyle(
+                  fontSize: size.width > 740
+                      ? size.width * 0.03
+                      : size.width * 0.055)),
+          padding: EdgeInsets.all(
+              size.width > 740 ? size.width * 0.04 : size.width * 0.065),
           color: Color.fromARGB(255, 5, 202, 169),
           textColor: Colors.white,
           shape: CircleBorder(),
@@ -35,8 +40,13 @@ class _IndianPokerView extends State<IndianPokerView> {
       case ButtonType.open:
         return MaterialButton(
           onPressed: isActivateButton ? _open : null,
-          child: Text("Open", style: TextStyle(fontSize: size.width * 0.07)),
-          padding: EdgeInsets.all(size.width * 0.085),
+          child: Text("Open",
+              style: TextStyle(
+                  fontSize: size.width > 740
+                      ? size.width * 0.03
+                      : size.width * 0.055)),
+          padding: EdgeInsets.all(
+              size.width > 740 ? size.width * 0.04 : size.width * 0.065),
           color: Color.fromARGB(255, 255, 54, 23),
           textColor: Colors.white,
           shape: CircleBorder(),
@@ -44,8 +54,13 @@ class _IndianPokerView extends State<IndianPokerView> {
       case ButtonType.change:
         return MaterialButton(
           onPressed: _change,
-          child: Text("Change", style: TextStyle(fontSize: size.width * 0.07)),
-          padding: EdgeInsets.all(size.width * 0.085),
+          child: Text("Change",
+              style: TextStyle(
+                  fontSize: size.width > 740
+                      ? size.width * 0.03
+                      : size.width * 0.055)),
+          padding: EdgeInsets.all(
+              size.width > 740 ? size.width * 0.04 : size.width * 0.065),
           color: Color.fromARGB(255, 255, 162, 2),
           textColor: Colors.white,
           shape: CircleBorder(),
@@ -97,6 +112,11 @@ class _IndianPokerView extends State<IndianPokerView> {
     setState(() {
       isDrowed = false;
       buttonType = ButtonType.drow;
+      card = "img/back.png";
+      isActivateButton = true;
+      _isUsedJoker = true;
+      _position = 0;
+      _opacity = 0;
     });
   }
 
@@ -126,15 +146,18 @@ class _IndianPokerView extends State<IndianPokerView> {
                       maintainState: true,
                       maintainAnimation: true,
                       child: Padding(
-                        padding: EdgeInsets.only(right: size.width * 0.04),
+                        padding: EdgeInsets.only(
+                            right: size.width * 0.04,
+                            top: size.width > 740 ? 0.0 : size.width * 0.05),
                         child: Column(
                           children: [
                             Text("Joker",
                                 style: TextStyle(
-                                    fontSize: size.width * 0.07,
+                                    fontSize: size.width > 740
+                                        ? size.width * 0.05
+                                        : size.width * 0.07,
                                     color: Color.fromARGB(255, 118, 1, 173),
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'Cursive')),
+                                    fontWeight: FontWeight.bold)),
                             Switch(
                               value: _isUsedJoker,
                               onChanged: (e) {
@@ -145,21 +168,23 @@ class _IndianPokerView extends State<IndianPokerView> {
                         ),
                       )),
                   Visibility(
-                      visible: isDrowed,
+                      visible: isDrowed && isActivateButton,
                       maintainSize: true,
                       maintainState: true,
                       maintainAnimation: true,
                       child: Padding(
-                          padding: EdgeInsets.only(),
+                          padding: EdgeInsets.only(
+                              top: size.width > 740 ? 0.0 : size.width * 0.05),
                           child: MaterialButton(
                             onPressed: _next,
                             child: Text(
                               "Next",
                               style: TextStyle(
-                                  fontSize: size.width * 0.07,
+                                  fontSize: size.width > 740
+                                      ? size.width * 0.05
+                                      : size.width * 0.07,
                                   color: Color.fromARGB(255, 4, 190, 159),
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Cursive'),
+                                  fontWeight: FontWeight.bold),
                             ),
                           )))
                 ])
@@ -216,16 +241,22 @@ class _IndianPokerView extends State<IndianPokerView> {
                           borderRadius: BorderRadius.circular(20),
                           child: Image.asset(
                             card,
-                            width: size.width * 0.7,
+                            width: size.width > 740
+                                ? size.width * 0.48
+                                : size.width * 0.75,
                           ),
                         ),
                       ),
                     ],
                   )),
             ]),
+            Spacer(),
             Padding(
                 padding: EdgeInsets.only(
-                    top: size.height * 0.08, bottom: size.height * 0.07),
+                    top: size.width > 740
+                        ? size.width * 0.01
+                        : size.height * 0.03,
+                    bottom: size.height * 0.05),
                 child: _showButton(size)),
           ],
         ),

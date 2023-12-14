@@ -1,4 +1,4 @@
-package com.example.indian_poker
+package com.kanbe1365.indian_poker
 
 import io.flutter.embedding.android.FlutterActivity
 
