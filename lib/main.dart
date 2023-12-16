@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart' as admob;
+import 'package:indian_poker/Ad/InterstitialAd.dart';
 import 'package:indian_poker/IndianPokerView.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  admob.MobileAds.instance.initialize();
+  InterstitialAd.instance.load();
   SystemChrome.setPreferredOrientations([
     // 縦向き
     DeviceOrientation.portraitUp,
