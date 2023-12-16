@@ -1,6 +1,8 @@
+import 'package:in_app_review/in_app_review.dart';
 import 'package:flutter/material.dart';
 import 'package:indian_poker/ButtonType.dart';
 import 'package:indian_poker/IndianPokerViewModel.dart';
+import 'package:indian_poker/Ad/InterstitialAd.dart';
 
 class IndianPokerView extends StatefulWidget {
   const IndianPokerView({
@@ -20,6 +22,7 @@ class _IndianPokerView extends State<IndianPokerView> {
   bool _isUsedJoker = true;
   double _position = 0;
   double _opacity = 0;
+  int callCount = 0;
 
   MaterialButton _showButton(Size size) {
     switch (buttonType) {
@@ -117,7 +120,22 @@ class _IndianPokerView extends State<IndianPokerView> {
       _isUsedJoker = true;
       _position = 0;
       _opacity = 0;
+
+      if (callCount == 0) {
+        callCount += 1;
+        showDialog();
+        return;
+      }
+
+      InterstitialAd.instance.show();
     });
+  }
+
+  void showDialog() async {
+    final InAppReview inAppReview = InAppReview.instance;
+    if (await inAppReview.isAvailable()) {
+      inAppReview.requestReview();
+    }
   }
 
   void _changeSwitch(bool e) {

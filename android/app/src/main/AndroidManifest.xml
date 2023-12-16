@@ -3,6 +3,9 @@
         android:label="indian_poker"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data
+           android:name="com.google.android.gms.ads.APPLICATION_ID"
+           android:value="ca-app-pub-3155724310732667~3147570767"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
