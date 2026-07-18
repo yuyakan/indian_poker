@@ -25,9 +25,7 @@ class InterstitialAd {
   bool get isNotLoaded => _interstitialAd == null;
 
   Future<void> load() async => await admob.InterstitialAd.load(
-        // test用
-        // adUnitId: Platform.isAndroid ? id_android_test : id_ios_test,
-        // 本番用
+        // テスト⇔本番の切り替えは config.dart の useTestAd で行う
         adUnitId: Platform.isAndroid ? id_android : id_ios,
 
         request: const admob.AdRequest(),
