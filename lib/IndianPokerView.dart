@@ -121,13 +121,15 @@ class _IndianPokerView extends State<IndianPokerView> {
       _position = 0;
       _opacity = 0;
 
-      if (callCount == 0) {
-        callCount += 1;
-        showDialog();
-        return;
-      }
+      callCount += 1;
 
-      InterstitialAd.instance.show();
+      if (callCount % 2 == 0) {
+        // 2, 4, 6, ... 回目（偶数回）は広告を表示
+        InterstitialAd.instance.show();
+      } else if (callCount >= 3) {
+        // 3, 5, 7, ... 回目（3回目以降の奇数回）はレビュー依頼
+        showDialog();
+      }
     });
   }
 
