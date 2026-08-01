@@ -28,6 +28,8 @@
 	<string>ca-app-pub-3155724310732667~7844298010</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This app uses your data to deliver ads that are more relevant to you.</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>

@@ -1,7 +1,9 @@
 import 'package:in_app_review/in_app_review.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart' as admob;
 import 'package:indian_poker/ButtonType.dart';
 import 'package:indian_poker/IndianPokerViewModel.dart';
+import 'package:indian_poker/Ad/ConsentManager.dart';
 import 'package:indian_poker/Ad/InterstitialAd.dart';
 
 class IndianPokerView extends StatefulWidget {
@@ -23,6 +25,38 @@ class _IndianPokerView extends State<IndianPokerView> {
   double _position = 0;
   double _opacity = 0;
   int callCount = 0;
+  final ConsentManager _consentManager = ConsentManager.instance;
+  bool _isMobileAdsInitializeCalled = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    // アプリ起動のたびに同意情報を更新し、必要なら UMP フォームと
+    // ATT 許可ダイアログを表示する。完了後に広告 SDK を初期化する。
+    _consentManager.gatherConsent((final admob.FormError? error) {
+      // error != null の場合は今回のセッションで同意が得られなかった。
+      // その場合でも（同意不要な広告のために）SDK 初期化は試みる。
+      _initializeMobileAdsSDK();
+    });
+
+    // 前回セッションで取得済みの同意を使い、初期化を試みる。
+    _initializeMobileAdsSDK();
+  }
+
+  /// UMP の同意状況に基づき、広告リクエストが可能なら Mobile Ads SDK を
+  /// 初期化して最初の広告を読み込む。二重初期化はガードする。
+  Future<void> _initializeMobileAdsSDK() async {
+    if (_isMobileAdsInitializeCalled) {
+      return;
+    }
+
+    if (await _consentManager.canRequestAds()) {
+      _isMobileAdsInitializeCalled = true;
+      await admob.MobileAds.instance.initialize();
+      await InterstitialAd.instance.load();
+    }
+  }
 
   MaterialButton _showButton(Size size) {
     switch (buttonType) {

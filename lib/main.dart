@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart' as admob;
-import 'package:indian_poker/Ad/InterstitialAd.dart';
 import 'package:indian_poker/IndianPokerView.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  admob.MobileAds.instance.initialize();
-  InterstitialAd.instance.load();
+
+  // 同意フロー（UMP + ATT）と広告の初期化は、UI 構築後に
+  // IndianPokerView の initState で行う（ATT ダイアログの表示に
+  // UI コンテキストが必要なため）。
   SystemChrome.setPreferredOrientations([
     // 縦向き
     DeviceOrientation.portraitUp,
